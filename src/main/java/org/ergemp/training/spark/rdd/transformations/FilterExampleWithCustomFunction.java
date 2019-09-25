@@ -7,7 +7,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 
-public class FilterExample2 {
+public class FilterExampleWithCustomFunction {
     public static void main(String[] args)
     {
         Logger.getLogger("org").setLevel(Level.ERROR);
