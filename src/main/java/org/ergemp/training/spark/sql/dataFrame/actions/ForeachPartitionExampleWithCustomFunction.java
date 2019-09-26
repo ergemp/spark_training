@@ -7,13 +7,13 @@ import org.apache.spark.sql.SparkSession;
 
 import java.util.Iterator;
 
-public class foreachPartitionExampleWithCustomFunction {
+public class ForeachPartitionExampleWithCustomFunction {
     public static void main(String[] args){
 
         SparkSession spark = SparkSession
                 .builder()
                 .master("local")
-                .appName("CreateNewSparkSession")
+                .appName("ForeachPartitionExampleWithCustomFunction")
                 .getOrCreate();
 
         Dataset<Row> dataset = spark.read().csv("resources/deneme100.csv");

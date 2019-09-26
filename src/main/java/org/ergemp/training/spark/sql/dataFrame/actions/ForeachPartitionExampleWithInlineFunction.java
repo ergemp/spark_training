@@ -7,18 +7,18 @@ import org.apache.spark.sql.SparkSession;
 
 import java.util.Iterator;
 
-public class foreachPartitionExampleWithInlineFunction {
+public class ForeachPartitionExampleWithInlineFunction {
     public static void main(String[] args){
 
         SparkSession spark = SparkSession
                 .builder()
                 .master("local")
-                .appName("CreateNewSparkSession")
+                .appName("ForeachPartitionExampleWithInlineFunction")
                 .getOrCreate();
 
-        Dataset<Row> dataset = spark.read().csv("resources/deneme100.csv");
+        Dataset<Row> df = spark.read().csv("resources/deneme100.csv");
 
-        dataset.foreachPartition(new ForeachPartitionFunction<Row>() {
+        df.foreachPartition(new ForeachPartitionFunction<Row>() {
             public void call(Iterator<Row> t) throws Exception {
                 while (t.hasNext()){
                     Row row = t.next();

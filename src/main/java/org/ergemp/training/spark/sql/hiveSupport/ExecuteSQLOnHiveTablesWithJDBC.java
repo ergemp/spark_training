@@ -6,20 +6,17 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ExecuteSQLOnHiveTablesWithJDBC {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         String jdbcConn = "jdbc:hive2://localhost:10000/default";
 
-        try
-        {
+        try {
             String driverName = "org.apache.hive.jdbc.HiveDriver";
             Class.forName(driverName);
             Connection con = DriverManager.getConnection(jdbcConn, "" , "");
 
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("show tables");
-            while (rs.next())
-            {
+            while (rs.next()) {
                 System.out.println(rs.getString(2));
             }
 
@@ -46,12 +43,10 @@ public class ExecuteSQLOnHiveTablesWithJDBC {
             tt
             */
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex) {
             ex.printStackTrace();
         }
-        finally
-        {
+        finally {
         }
     }
 }

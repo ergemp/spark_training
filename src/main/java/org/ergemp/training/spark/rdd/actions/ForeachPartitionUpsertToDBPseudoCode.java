@@ -1,6 +1,6 @@
-package org.ergemp.training.spark.streaming.actions;
+package org.ergemp.training.spark.rdd.actions;
 
-public class ForEachPartitionExample {
+public class ForeachPartitionUpsertToDBPseudoCode {
     public static void main(String[] args){
         /*
         event.map(x => x._2 ).foreachRDD { rdd =>

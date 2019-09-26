@@ -9,9 +9,10 @@ public class CreatingDataFrameFromTextFileOnHDFS {
         SparkSession spark = SparkSession
                 .builder()
                 .appName("CreatingDataFrameFromTextFileOnHDFS")
+                .master("locals")
                 .getOrCreate();
 
         JavaRDD<String> lines = null;
-        lines = spark.read().textFile("hdfs://12.0.7.71:8020/delphoi/delphoi-events-json/NewSession/year=2018/month=09/day=25/hour=15").toJavaRDD();
+        lines = spark.read().textFile("hdfs://localhost:8020/delphoi/delphoi-events-json/NewSession/year=2018/month=09/day=25/hour=15").toJavaRDD();
     }
 }

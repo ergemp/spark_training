@@ -7,10 +7,8 @@ import org.apache.spark.sql.SparkSession;
 import java.io.File;
 
 public class ExecuteSQLOnHiveTables {
-    public static void main(String[] args)
-    {
-        try
-        {
+    public static void main(String[] args) {
+        try {
             String sparkWarehouseLocation = new File("spark-warehouse").getAbsolutePath();
             String hiveWarehouseLocation = new File("hive-warehouse").getAbsolutePath();
 
@@ -25,7 +23,7 @@ public class ExecuteSQLOnHiveTables {
             spark.sql("show tables").show();
 
             /*
-            /u01/hadoop/spark/bin/spark-submit --class spark_sql.run_sql --master local /u01/spark_toolkit.jar
+            /u01/hadoop/spark/bin/spark-submit --class org.ergemp.training.spark.sql.hiveSupport.ExecuteSQLOnHiveTables --master local spark_training-1.0-SNAPSHOT-jar-with-dependencies.jar
             +--------+--------------------+-----------+
             |database|           tableName|isTemporary|
             +--------+--------------------+-----------+
@@ -55,12 +53,10 @@ public class ExecuteSQLOnHiveTables {
             Dataset<Row> sqlDF = spark.sql("show tables");
             sqlDF.show();
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex) {
             ex.printStackTrace();
         }
-        finally
-        {
+        finally {
         }
     }
 }
