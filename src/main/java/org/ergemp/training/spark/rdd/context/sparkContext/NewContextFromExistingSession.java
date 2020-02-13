@@ -1,9 +1,11 @@
-package org.ergemp.training.spark.sql.session;
+package org.ergemp.training.spark.rdd.context.sparkContext;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.SparkContext;
+import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.SparkSession;
 
-public class CreateNewSparkSession {
+public class NewContextFromExistingSession {
     public static void main(String[] args){
 
         SparkConf conf = new SparkConf()
@@ -15,11 +17,8 @@ public class CreateNewSparkSession {
                 .config(conf)
                 .getOrCreate();
 
-        SparkSession sparkSession2 = SparkSession
-                .builder()
-                .master("local")
-                .appName("CreateNewSparkSession")
-                .getOrCreate();
+        SparkContext sc = sparkSession.sparkContext();
+        JavaSparkContext jsc = new JavaSparkContext(sc);
 
     }
 }
