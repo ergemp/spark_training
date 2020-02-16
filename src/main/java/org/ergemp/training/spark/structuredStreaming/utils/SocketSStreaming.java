@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.sql.structuredStreaming.utils;
+package org.ergemp.training.spark.structuredStreaming.utils;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;

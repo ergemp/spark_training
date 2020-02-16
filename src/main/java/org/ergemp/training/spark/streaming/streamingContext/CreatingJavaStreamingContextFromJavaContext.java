@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.rdd.context.streamingContext;
+package org.ergemp.training.spark.streaming.streamingContext;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;

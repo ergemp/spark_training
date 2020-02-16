@@ -11,7 +11,7 @@ public class MapReduceExampleWithCustomFunction {
 
     public static void main(String[] args) {
 
-        SparkConf conf = new SparkConf().setAppName("MapReduceExampleWithCustomFunction").setMaster("local[1]");
+        SparkConf conf = new SparkConf().setAppName("MapReduceExampleWithCustomFunction").setMaster("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         //passing functions instread of lambda expression

@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.rdd.rdd;
+package org.ergemp.training.spark.rdd;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

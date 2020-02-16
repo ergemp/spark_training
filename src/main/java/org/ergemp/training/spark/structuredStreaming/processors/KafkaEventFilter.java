@@ -1,10 +1,10 @@
-package org.ergemp.training.spark.sql.structuredStreaming.processors;
+package org.ergemp.training.spark.structuredStreaming.processors;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.ergemp.training.spark.sql.structuredStreaming.utils.KafkaSStreaming;
+import org.ergemp.training.spark.structuredStreaming.utils.KafkaSStreaming;
 
 public class KafkaEventFilter {
     public static void main (String[] args) {

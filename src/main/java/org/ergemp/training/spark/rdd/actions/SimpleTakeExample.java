@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.rdd.rdd;
+package org.ergemp.training.spark.rdd.actions;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -9,7 +9,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleRDDCollectExample {
+public class SimpleTakeExample {
     public static void main(String[] args)
     {
         Logger.getLogger("org").setLevel(Level.ERROR);
@@ -22,9 +22,7 @@ public class SimpleRDDCollectExample {
 
         JavaRDD<Integer> distData = sc.parallelize(data);
 
-        List<Integer> lCollect = distData.collect();
-
-        for(Integer eCollect : lCollect) {
+        for(Integer eCollect : distData.take(2)) {
             System.out.println(eCollect);
         }
 

@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.rdd.streaming;
+package org.ergemp.training.spark.streaming.kafkaStreamExamples;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;

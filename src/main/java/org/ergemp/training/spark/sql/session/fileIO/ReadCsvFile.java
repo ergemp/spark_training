@@ -10,11 +10,13 @@ public class ReadCsvFile {
         SparkSession spark = SparkSession
                 .builder()
                 .appName("Spark Example - Read CSV to RDD")
-                .master("local[2]")
+                .master("local")
                 .getOrCreate();
 
-        String csvPath = "resources/test.csv";
-        Dataset<Row> df = spark.read().format("csv")
+        String csvPath = "resources/nasa-weblogs.txt";
+        Dataset<Row> df = spark.read()
+                        .format("csv")
+                        .option("delimiter","\t")
                         .option("header", "true")
                         .option("mode", "DROPMALFORMED")
                         .load(csvPath);

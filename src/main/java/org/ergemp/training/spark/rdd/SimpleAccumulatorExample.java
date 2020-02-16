@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.rdd.accumulators;
+package org.ergemp.training.spark.rdd;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
