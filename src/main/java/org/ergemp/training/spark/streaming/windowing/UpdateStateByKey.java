@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.streaming.transformation;
+package org.ergemp.training.spark.streaming.windowing;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
