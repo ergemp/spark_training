@@ -15,7 +15,7 @@ public class ForeachExampleWithInlineFunction {
         Logger.getLogger("org").setLevel(Level.ERROR);
         Logger.getLogger("akka").setLevel(Level.OFF);
 
-        SparkConf conf = new SparkConf().setAppName("simpleRDDExample").setMaster("local[1]");
+        SparkConf conf = new SparkConf().setAppName("ForeachExampleWithInlineFunction").setMaster("local[2]");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         List<Integer> data = Arrays.asList(1, 2, 3, 4, 5);
