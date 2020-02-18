@@ -7,7 +7,7 @@ import org.apache.spark.streaming.Duration;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 
-public class CountExample {
+public class ForEachRDDExample3 {
     public static void main(String[] args){
         Logger log = Logger.getRootLogger();
         log.setLevel(Level.ERROR);
@@ -16,15 +16,19 @@ public class CountExample {
         Logger.getLogger("akka").setLevel(Level.OFF);
 
         SparkConf conf = new SparkConf()
-                .setAppName("CountExample")
+                .setAppName("ForEachRDDExample1")
                 .setMaster("local[2]");
 
         JavaStreamingContext jssc = new JavaStreamingContext(conf, new Duration(10000));
-
         JavaDStream<String> lines = jssc.socketTextStream("localhost", 19999);
 
-        lines.count().print();
-        lines.filter(line->line.contains("error")).count().print();
+
+        lines.foreachRDD(rdd -> {
+                    rdd.map(line -> line.length())
+                            .map(line -> "length of the input line: " + line)
+                            .foreach(each -> System.out.println(each));
+                }
+                );
 
         try {
             jssc.start();
@@ -32,5 +36,6 @@ public class CountExample {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
     }
 }
