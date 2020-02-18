@@ -7,13 +7,13 @@ import org.apache.spark.sql.SparkSession;
 
 import java.util.Properties;
 
-public class SaveToDB {
+public class SaveDFToDB {
     public static void main(String[] args){
         //configure spark
         SparkSession spark = SparkSession
                 .builder()
-                .appName("ParseAndLoadCSVToDataFrame")
-                .master("local[1]")
+                .appName("ParseCSVAndSaveDFToDB")
+                .master("local[2]")
                 .getOrCreate();
 
         Dataset<Row> df = spark.read()
