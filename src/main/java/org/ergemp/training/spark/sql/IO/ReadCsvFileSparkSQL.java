@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.sql.session.fileIO;
+package org.ergemp.training.spark.sql.IO;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -9,7 +9,7 @@ public class ReadCsvFileSparkSQL {
         // configure spark
         SparkSession spark = SparkSession
                 .builder()
-                .appName("Spark Example - Read CSV to RDD")
+                .appName("ReadCsvFileSparkSQL")
                 .master("local[2]")
                 .getOrCreate();
 

@@ -1,10 +1,10 @@
-package org.ergemp.training.spark.sql.session.fileIO;
+package org.ergemp.training.spark.sql.IO;
 
-import org.apache.spark.sql.Dataset;
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-public class ReadJsonFileDF {
+public class ReadJsonFileRDD {
     public static void main(String[] args) {
         // configure spark
         SparkSession spark = SparkSession
@@ -15,8 +15,10 @@ public class ReadJsonFileDF {
 
         // read list to RDD
         String jsonPath = "resources/sample.json";
-        Dataset<Row> df = spark.read().json(jsonPath);
+        JavaRDD<Row> items = spark.read().json(jsonPath).toJavaRDD();
 
-        df.printSchema();
+        items.foreach(item -> {
+            System.out.println(item);
+        });
     }
 }

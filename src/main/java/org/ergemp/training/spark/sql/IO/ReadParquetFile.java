@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.sql.session.fileIO;
+package org.ergemp.training.spark.sql.IO;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
