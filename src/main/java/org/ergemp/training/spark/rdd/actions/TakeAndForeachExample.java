@@ -1,4 +1,4 @@
-package org.ergemp.training.spark.sql.dataFrame.actions;
+package org.ergemp.training.spark.rdd.actions;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;

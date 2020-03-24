@@ -30,7 +30,7 @@ public class Map {
         //JavaRDD<Object[]> javaRDD = JavaRDD.fromRDD(jdbcRDD, ClassManifestFactory$.MODULE$.fromClass(Object[].class));
         JavaRDD<Object[]> javaRDD = jdbcRDD.toJavaRDD();
 
-        javaRDD.map(record -> record[0].toString());
+        //javaRDD.map(record -> record[0].toString());
         List<String> lines = javaRDD.map(record -> record[0].toString()).collect();
         /*
         List<String> lines = javaRDD.map(new Function<Object[], String>() {

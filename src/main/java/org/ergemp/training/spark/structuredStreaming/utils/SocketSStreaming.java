@@ -13,7 +13,7 @@ public class SocketSStreaming {
         spark = SparkSession
                 .builder()
                 .appName(app_name)
-                .master("local[2]")
+                .master("local[*]")
                 .getOrCreate();
 
         df = spark
